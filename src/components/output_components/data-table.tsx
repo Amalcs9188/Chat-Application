@@ -49,9 +49,6 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import { LoaderFive } from "../ui/loader";
-
-// custom components (you should already have them in your project)
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -602,11 +599,7 @@ export function DataTable<TData, TValue>({
                       <TableCell
                         colSpan={columns.length}
                         className="h-24 text-center">
-                        {isLoading ? (
-                          <LoaderFive text="Loading Data.." />
-                        ) : (
-                          "No results."
-                        )}
+                        {isLoading ? "Loading Data.." : "No results."}
                       </TableCell>
                     </TableRow>
                   )}
